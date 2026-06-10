@@ -1,0 +1,33 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "mofs"
+version = "0.1.0"
+description = "Multi-objective evolutionary feature selection on high-dimensional biological data, with a knockoff baseline"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "numpy>=2.0",
+    "scipy>=1.13",
+    "pandas>=2.2",
+    "scikit-learn>=1.8",  # l1_ratio API; `penalty=` removed in 1.10
+    "pymoo>=0.6.1",
+    "moocore>=0.1",
+    "scikit-posthocs>=0.9",
+    "matplotlib>=3.8",
+    "pyyaml>=6.0",
+    "joblib>=1.4",
+    "tabulate>=0.9",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/mofs"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+filterwarnings = ["ignore::UserWarning", "ignore::FutureWarning"]

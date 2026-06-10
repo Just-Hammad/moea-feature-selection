@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+title: >-
+  Multi-objective evolutionary feature selection on high-dimensional
+  biological data, with a knockoff baseline
+message: "If you use this software or its results, please cite it."
+type: software
+abstract: >-
+  A budget-matched comparison of NSGA-II feature selection against random
+  subsets, standard filter and embedded baselines, a model-X knockoff filter,
+  and an oracle with access to the true support. Evaluated under nested
+  cross-validation with a labels-permuted control, and reported with Friedman
+  ranks, Holm-corrected pairwise Wilcoxon tests, Cliff's delta effect sizes,
+  and hypervolume against a fixed, problem-derived reference point.
+keywords:
+  - feature selection
+  - multi-objective optimisation
+  - NSGA-II
+  - knockoff filter
+  - false discovery rate
+  - nested cross-validation
+  - reproducibility
+license: MIT
+version: 0.1.0
+date-released: "2026-09-14"
