@@ -1,0 +1,63 @@
+# Experiment configuration. Every number the study depends on lives here, not
+# as a literal in the code, so the manifest that ships with the results fully
+# determines them.
+
+seed: 20260914          # master seed; per-run seeds derive from it
+n_seeds: 10             # stochastic replications per (dataset, selector)
+n_outer: 5              # outer folds -- the honest estimate
+inner_folds: 3          # inner CV used by the objective
+n_jobs: 8            # leave headroom; this machine runs other jobs
+
+# Evolutionary budget. Random subsets receive pop_size * n_gen evaluations,
+# derived from these same two numbers, so the ablation is budget-matched by
+# construction rather than by anyone remembering to keep them in sync.
+# 30 x 30 = 900 unique evaluations. Chosen from a measured cost of ~27.5 ms per
+# evaluation (three inner-CV logistic fits, dominated by scikit-learn's per-fit
+# overhead rather than by computation), which puts a full study within a
+# reproducible wall-clock budget. The absolute number matters far less than the
+# fact that it is *stated* and *identical* for NSGA-II, NSGA-III and the random
+# ablation -- the comparison is at equal budget by construction.
+pop_size: 30
+n_gen: 30
+
+max_features: 200       # cardinality repair ceiling
+k_init_min: 2           # initial-population cardinality range (log-uniform)
+k_init_max: 100
+
+fdr_q: 0.10             # target FDR for BH and for the knockoff filter
+knockoff_screen_to: 500 # screening cap; breaks the strict FDR guarantee, and is reported
+
+datasets:
+  # Calibrated so an oracle using the true support reaches ~0.06 balanced
+  # error. That ceiling is what makes a table of near-chance results
+  # interpretable: the signal is demonstrably there and recoverable, so any
+  # method that misses it is failing at selection, not facing a dead dataset.
+  - kind: synthetic     # known ground truth -> precision/recall/realised FDR
+    n: 120
+    p: 2000
+    n_informative: 10
+    block_size: 50
+    rho: 0.3
+    effect: 3.0
+    seed: 1
+  - kind: openml        # real small-n-large-p microarray
+    key: colon
+
+selectors:
+  - NSGA-II
+  - NSGA-III
+  - Random subsets
+  - t-test + BH
+  - mRMR
+  - LASSO path
+  - Knockoff+
+  - Knockoff
+  - Oracle (true support)   # ceiling; synthetic data only
+
+# Applied with --quick, for smoke tests and CI.
+quick_overrides:
+  n_seeds: 2
+  n_outer: 3
+  pop_size: 12
+  n_gen: 8
+  knockoff_screen_to: 200
