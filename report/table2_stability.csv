@@ -1,0 +1,18 @@
+dataset,selector,jaccard_median,jaccard_mean,n_pairs
+synthetic_n120_p2000_k10,NSGA-II,0.0,0.011,100
+synthetic_n120_p2000_k10,NSGA-III,0.0,0.009,100
+synthetic_n120_p2000_k10,Random subsets,0.0,0.008,100
+synthetic_n120_p2000_k10,t-test + BH,0.255,0.252,100
+synthetic_n120_p2000_k10,mRMR,0.222,0.221,100
+synthetic_n120_p2000_k10,LASSO path,0.181,0.184,100
+synthetic_n120_p2000_k10,Knockoff+,,,0
+synthetic_n120_p2000_k10,Knockoff,0.0,0.15,10
+synthetic_n120_p2000_k10,Oracle (true support),1.0,1.0,100
+colon,NSGA-II,0.0,0.004,100
+colon,NSGA-III,0.0,0.01,100
+colon,Random subsets,0.0,0.005,100
+colon,t-test + BH,0.277,0.314,100
+colon,mRMR,0.25,0.249,100
+colon,LASSO path,0.187,0.197,100
+colon,Knockoff+,,,0
+colon,Knockoff,0.292,0.238,26

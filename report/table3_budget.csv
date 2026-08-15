@@ -1,0 +1,18 @@
+dataset,selector,median,q1,q3
+colon,Knockoff,0,0,1
+colon,Knockoff+,0,0,0
+colon,LASSO path,7,7,7
+colon,NSGA-II,886,883,889
+colon,NSGA-III,890,888,894
+colon,Random subsets,900,900,900
+colon,mRMR,7,7,7
+colon,t-test + BH,9,9,9
+synthetic_n120_p2000_k10,Knockoff,0,0,1
+synthetic_n120_p2000_k10,Knockoff+,0,0,0
+synthetic_n120_p2000_k10,LASSO path,7,7,7
+synthetic_n120_p2000_k10,NSGA-II,888,884,892
+synthetic_n120_p2000_k10,NSGA-III,891,886,894
+synthetic_n120_p2000_k10,Oracle (true support),1,1,1
+synthetic_n120_p2000_k10,Random subsets,900,900,900
+synthetic_n120_p2000_k10,mRMR,7,7,7
+synthetic_n120_p2000_k10,t-test + BH,8,8,8
