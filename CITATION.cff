@@ -4,6 +4,10 @@ title: >-
   biological data, with a knockoff baseline
 message: "If you use this software or its results, please cite it."
 type: software
+authors:
+  - family-names: "Hammad"
+    given-names: "Rana"
+    affiliation: "NUST SEECS, Islamabad, Pakistan"
 abstract: >-
   A budget-matched comparison of NSGA-II feature selection against random
   subsets, standard filter and embedded baselines, a model-X knockoff filter,
@@ -11,6 +15,7 @@ abstract: >-
   cross-validation with a labels-permuted control, and reported with Friedman
   ranks, Holm-corrected pairwise Wilcoxon tests, Cliff's delta effect sizes,
   and hypervolume against a fixed, problem-derived reference point.
+repository-code: "https://github.com/Just-Hammad/moea-feature-selection"
 keywords:
   - feature selection
   - multi-objective optimisation
@@ -21,4 +26,4 @@ keywords:
   - reproducibility
 license: MIT
 version: 0.1.0
-date-released: "2026-09-14"
+date-released: "2026-09-16"

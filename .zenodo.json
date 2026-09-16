@@ -1,0 +1,30 @@
+{
+  "upload_type": "software",
+  "access_right": "open",
+  "license": "MIT",
+  "title": "Multi-objective evolutionary feature selection on high-dimensional biological data, with a knockoff baseline",
+  "description": "A budget-matched, nested-cross-validated comparison of NSGA-II and NSGA-III feature selection against random subsets, filter and embedded baselines, a model-X knockoff filter, and an oracle with access to the true support. The evolutionary search dominates random sampling on the inner-CV Pareto front and shows no statistically detectable advantage on held-out error, recovering none of the planted informative features where a t-test with Benjamini-Hochberg correction recovers seven of ten at a thousandth of the evaluation cost. Reported with Friedman ranks, Holm-corrected pairwise Wilcoxon tests, Cliff's delta and hypervolume against a fixed reference point.",
+  "creators": [
+    {
+      "name": "Hammad, Rana",
+      "affiliation": "NUST SEECS, Islamabad, Pakistan"
+    }
+  ],
+  "keywords": [
+    "feature selection",
+    "multi-objective optimisation",
+    "NSGA-II",
+    "knockoff filter",
+    "false discovery rate",
+    "nested cross-validation",
+    "reproducibility",
+    "genomics"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/Just-Hammad/moea-feature-selection",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ]
+}
